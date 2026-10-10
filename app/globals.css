@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --ink: #142a2a;
+  --muted: #75817c;
+  --paper: #f4f1e9;
+  --surface: #fffdf7;
+  --line: #dcded4;
+  --acid: #d8fb50;
+  --coral: #fa765b;
+  --sea: #c9e6dc;
+  --font-body: 'Manrope', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .5; }
+::selection { background: var(--acid); color: var(--ink); }
+
+.display { font-family: var(--font-display); }
+.mono { font-family: var(--font-mono); }
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.87' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+@keyframes enter-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes enter-right { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes pop { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: scale(1); } }
+.animate-enter { animation: enter-up .55s cubic-bezier(.2,.7,.2,1) both; }
+.animate-delay-1 { animation-delay: .08s; }
+.animate-delay-2 { animation-delay: .16s; }
+.animate-delay-3 { animation-delay: .24s; }
+.modal-enter { animation: pop .22s cubic-bezier(.2,.7,.2,1) both; }
+.drawer-enter { animation: enter-right .25s cubic-bezier(.2,.7,.2,1) both; }
+
+.hide-scrollbar { scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
