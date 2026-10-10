@@ -2,14 +2,15 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #142a2a;
-  --muted: #75817c;
-  --paper: #f4f1e9;
-  --surface: #fffdf7;
-  --line: #dcded4;
-  --acid: #d8fb50;
-  --coral: #fa765b;
-  --sea: #c9e6dc;
+  --ink: #1e293b;
+  --muted: #64748b;
+  --paper: #eff6ff;
+  --surface: #fffdf5;
+  --line: #dbe4f0;
+  --acid: #ff6b6b;
+  --coral: #ff6b6b;
+  --sea: #e0f2fe;
+  --royal: #1e40af;
   --font-body: 'Manrope', sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'DM Mono', monospace;
@@ -27,7 +28,7 @@ body {
 button, input, textarea, select { font: inherit; }
 button { cursor: pointer; }
 button:disabled { cursor: not-allowed; opacity: .5; }
-::selection { background: var(--acid); color: var(--ink); }
+::selection { background: var(--royal); color: white; }
 
 .display { font-family: var(--font-display); }
 .mono { font-family: var(--font-mono); }
