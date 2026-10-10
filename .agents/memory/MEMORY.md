@@ -1,0 +1,1 @@
+- [Next.js cache build failures](next-build-cache.md) — stale `.next` output can trigger a WasmHash crash; clearing generated output fixed the build.
